@@ -1,0 +1,2007 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="/ps1threepi/site_media/css/main.css" type="text/css"/>
+
+<title>Candidate 1125435460123419200</title>
+
+
+
+<script language="javascript" type="text/javascript">
+var jslcdataglobal = new Object();
+var jslabelsglobal = new Object();
+var jslimitsglobal = new Object();
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
+var jslcdata = new Array();
+var jslabels = new Array();
+// We have an array with 4 elements. Each element is another array of n elements (usually 5).
+// They must all be the same size - the length of which is captured in the jslabels array.
+// 1. Data points
+// 2. Blanks
+// 3. Nondetections
+// 4. Data labels
+
+// 2013-01-14 KWS Add max/min limits.  The last value in the (e.g.) xmin array is the min for the whole array.
+//                Likewise for the other limits.  Note that we had to add x2min and x2max here into the
+//                javascript array, because for some reason Flot doesn't allow calculations within its axis
+//                element specifiers.
+
+// 2012-01-16 KWS Moved graphing specific max/min limits (e.g. padding, x2min and x2max) into the lightcurve
+//                javascript code to restrict the HTML code to just presenting the required data values.
+
+// 2013-02-14 KWS Change the xmin to the FIRST value of the xmin array (which doesn't include the limit dates).
+var jslclimits = {  "xmin": 56450.2663029, 
+                   "xmax": 57485.9237736,
+                   "ymin": 18.9995,
+                   "ymax": 21.1223,
+                   "discoveryDate": 57101.4833301,
+                   "today": 57485.9237736 };
+
+jslimitsglobal["#flot-lightcurve"] = jslclimits;
+
+
+// The first data items are detection data, non-detections, blanks (and anything else)
+
+  // Normally we have 5 filters, but in case we have more, slice all but the last element
+  // (which is the combined data for all filters).
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([[57137.3694965282, 20.3619, 0.149366], [57137.3923251321, 20.3423, 0.11416], [57137.4035416663, 21.1223, 0.27646]]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([[57101.483330051, 19.1114, 0.04434], [57101.4852976035, 19.1474, 0.0569631], [57101.4938941854, 19.149, 0.0520139], [57101.4958652388, 19.103, 0.0399435], [57101.5044805471, 19.1264, 0.0450035], [57101.5064634197, 19.088, 0.042005], [57101.5411675349, 19.0197, 0.0318667], [57101.5431487817, 18.9995, 0.0349292], [57160.333509446, 20.3946, 0.107041], [57160.3465930315, 20.3886, 0.11727], [57160.3596670543, 20.4926, 0.144913], [57160.3728016871, 20.2414, 0.115902]]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+
+  // Normally we have 5 filters, but in case we have more, slice all but the last element
+  // (which is the combined data for all filters).
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+
+  // Normally we have 5 filters, but in case we have more, slice all but the last element
+  // (which is the combined data for all filters).
+  
+    jslcdata.push([[56715.5404793467, 21.0], [56715.5417559038, 21.0], [56715.5523844469, 21.0], [56715.5536505278, 21.0], [56715.5858632302, 21.0], [56715.5871345693, 21.0], [56715.59805342, 21.0], [56715.5993222088, 21.0]]);
+  
+    jslcdata.push([[57137.3807455087, 20.6], [57449.4764532127, 20.6], [57449.4883119681, 20.6], [57449.4999663639, 20.6], [57449.5116732713, 20.6], [57476.4565948485, 20.6], [57476.4693831877, 20.6], [57476.482120799, 20.6], [57476.4949173207, 20.6]]);
+  
+    jslcdata.push([[57080.4987828904, 20.7], [57080.5106335767, 20.7], [57080.5225053923, 20.7], [57080.5343896207, 20.7], [57409.5904755397, 20.7], [57409.6027765091, 20.7], [57409.6151364977, 20.7], [57409.6274851261, 20.7]]);
+  
+    jslcdata.push([[56450.2663029442, 20.4], [56450.2687996723, 20.4], [56658.6597734508, 20.4], [57077.6602353956, 20.4], [57235.2548673176, 20.4], [57240.2542583445, 20.4], [57421.6605866436, 20.4], [57421.6615288757, 20.4], [57421.6688850435, 20.4], [57422.6585002289, 20.4]]);
+  
+    jslcdata.push([[56467.2466521923, 18.3], [56467.249845065, 18.3], [56676.6175175253, 18.3], [57412.6739335592, 18.3], [57412.6748732551, 18.3], [57423.6743619187, 18.3], [57423.67529995, 18.3]]);
+  
+    jslcdata.push([[57078.5243106503, 22.0], [57078.5265201331, 22.0], [57078.5352417223, 22.0], [57078.5374607098, 22.0], [57078.5462311449, 22.0], [57078.5484646129, 22.0], [57078.5572423838, 22.0], [57078.5594661146, 22.0], [57102.435789477, 22.0], [57102.4371027398, 22.0], [57102.4463348012, 22.0], [57102.4476545337, 22.0], [57102.4568754701, 22.0], [57102.4581868459, 22.0], [57102.4674012837, 22.0], [57102.4687140561, 22.0], [57159.3203310895, 22.0], [57161.2863573697, 22.0], [57161.2986062151, 22.0], [57161.3108628104, 22.0], [57161.3230940839, 22.0], [57403.6131094367, 22.0], [57403.6254665387, 22.0], [57403.6378076751, 22.0], [57403.650129164, 22.0], [57422.5465758694, 22.0], [57422.558896361, 22.0], [57422.5712318375, 22.0], [57422.5835510791, 22.0], [57433.5036634253, 22.0], [57433.5068888039, 22.0], [57433.5153074005, 22.0], [57433.5185242532, 22.0], [57433.5269631439, 22.0], [57433.530180953, 22.0], [57433.5386228319, 22.0], [57433.5418441286, 22.0], [57459.4499146221, 22.0], [57459.4505584393, 22.0], [57459.463114413, 22.0], [57459.4637554685, 22.0], [57459.4762646225, 22.0], [57459.4769094512, 22.0], [57459.489475531, 22.0], [57459.4901173668, 22.0], [57459.4935118821, 22.0], [57459.5061899102, 22.0], [57459.5188569008, 22.0], [57459.5315040037, 22.0], [57478.4097571809, 22.0], [57478.4224147945, 22.0], [57478.4350253003, 22.0], [57478.4475811209, 22.0], [57481.4355607419, 22.0], [57481.4479238196, 22.0], [57481.4602867005, 22.0], [57481.4726682297, 22.0]]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+
+  // Normally we have 5 filters, but in case we have more, slice all but the last element
+  // (which is the combined data for all filters).
+  
+
+  // Normally we have 5 filters, but in case we have more, slice all but the last element
+  // (which is the combined data for all filters).
+  
+
+
+jslcdataglobal["#flot-lightcurve"] = jslcdata;
+
+// The last item is the data labels. The length of this array must be the same as the
+// length of the filterdata (minus the last element).
+
+  jslabels.push({"color": 0, "display": true, "label": "g"});
+
+  jslabels.push({"color": 1, "display": true, "label": "r"});
+
+  jslabels.push({"color": 2, "display": true, "label": "i"});
+
+  jslabels.push({"color": 3, "display": true, "label": "z"});
+
+  jslabels.push({"color": 4, "display": true, "label": "y"});
+
+  jslabels.push({"color": 5, "display": true, "label": "w"});
+
+  jslabels.push({"color": 6, "display": false, "label": "x"});
+
+  jslabels.push({"color": 7, "display": false, "label": "B"});
+
+  jslabels.push({"color": 8, "display": false, "label": "V"});
+
+  jslabels.push({"color": 0, "display": false, "label": "g blanks"});
+
+  jslabels.push({"color": 1, "display": false, "label": "r blanks"});
+
+  jslabels.push({"color": 2, "display": false, "label": "i blanks"});
+
+  jslabels.push({"color": 3, "display": false, "label": "z blanks"});
+
+  jslabels.push({"color": 4, "display": false, "label": "y blanks"});
+
+  jslabels.push({"color": 5, "display": false, "label": "w blanks"});
+
+  jslabels.push({"color": 6, "display": false, "label": "x blanks"});
+
+  jslabels.push({"color": 7, "display": false, "label": "B blanks"});
+
+  jslabels.push({"color": 8, "display": false, "label": "V blanks"});
+
+  jslabels.push({"color": 0, "display": false, "label": "g non det"});
+
+  jslabels.push({"color": 1, "display": false, "label": "r non det"});
+
+  jslabels.push({"color": 2, "display": false, "label": "i non det"});
+
+  jslabels.push({"color": 3, "display": false, "label": "z non det"});
+
+  jslabels.push({"color": 4, "display": false, "label": "y non det"});
+
+  jslabels.push({"color": 5, "display": false, "label": "w non det"});
+
+  jslabels.push({"color": 6, "display": false, "label": "x non det"});
+
+  jslabels.push({"color": 7, "display": false, "label": "B non det"});
+
+  jslabels.push({"color": 8, "display": false, "label": "V non det"});
+
+
+jslabelsglobal["#flot-lightcurve"] = jslabels;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+var jscolourdataglobal = new Object();
+var jscolourlabelsglobal = new Object();
+var jscolourlimitsglobal = new Object();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+var jsrecurrencedata = new Array();
+var jsrecurrencelabels = new Array();
+var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
+                           "xmax": 3.0,
+                           "ymin": -3.0,
+                           "ymax": 3.0 };
+
+
+  jsrecurrencedata.push([[0.11042578508971271, -0.07625505251240838], [0.1301304150366262, -0.18008760021146486], [0.08901141854012172, -0.21432732232185003], [0.04005435196884914, -0.18059266383119166], [-0.09782971644279777, -0.4535573711805796], [-0.14067948614195103, -0.14525478237175093], [-0.07421378455413936, -0.18841108561957753], [0.09018811415067571, -0.0012030027853882075], [0.10759893980716279, -0.0694713318168283], [0.06223251155992295, -0.005508588721170327], [0.06431128891605864, -0.06759865489129879], [0.025746722491847743, 0.012488655076481336], [0.03997982917717942, -0.06741054378380795], [-0.0, 0.0], [0.07036656633537013, -0.06452023487000247]]);
+
+  jsrecurrencedata.push([[0, 0]]);
+
+  jsrecurrencedata.push([[0.0344881969926084, -0.11344730531632763]]);
+
+
+
+  jsrecurrencelabels.push({"color": 20, "display": false, "label": "Recurrences"});
+
+  jsrecurrencelabels.push({"color": 21, "display": true, "label": "1st detection"});
+
+  jsrecurrencelabels.push({"color": 22, "display": true, "label": "mean coords (rms = 0.10)"});
+
+
+</script>
+
+
+</head>
+
+
+<body onload="TimerThread()">
+
+<script type="text/javascript">
+// 2012-12-07 KWS Added DR9 equivalents
+var a = new Image(); a.src = 'http://skyserver.sdss3.org/dr9/en/tools/chart/navi.asp?ra=193.647791346&dec=-12.5719799866&scale=0.1&width=500&height=500&opt=GPS';
+var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpeg.aspx?ra=193.647791346&dec=-12.5719799866&scale=0.1&width=500&height=500&opt=GPS';
+</script>
+
+
+<div id="candidatepage">
+<nav id="navigation">
+<ul>
+
+<li><a HREF="../../">home</a></li>
+<li><a HREF="../../public/">object list</a></li>
+<li><a HREF="../../public_quickview/">object quickview list</a></li>
+
+</ul>
+</nav>
+
+
+<section id="candidateinfo">
+<article id="candidatebody">
+<header id="candidateheader">
+<hgroup>
+<h1>
+
+  PS15px
+
+</h1>
+<h2>&nbsp;</h2>
+<h2>12:54:35.46 -12:34:19.1</h2>
+
+<h2>&nbsp;</h2>
+<h3><span class="objectinfo">See also: </span>
+
+     
+        
+          <a href="http://www.cbat.eps.harvard.edu/lists/Supernovae.html">2015B</a>
+        
+     
+
+     
+        
+          <a href="http://www.cbat.eps.harvard.edu/unconf/tocp.html">PSN J12543553-123418</a>
+        
+     
+
+     
+        
+          <a href="http://www.rochesterastronomy.org/supernova.html#PSNJ12543553-1234186">PSNJ12543553-1234186</a>
+        
+     
+
+     
+
+     
+        
+          <a href="http://www.rochesterastronomy.org/supernova.html#2015B">SN2015B</a>
+        
+     
+
+</h3>
+
+</hgroup>
+</header>
+<header id="candidatemeta">
+
+<hgroup class="hgroup">
+<div class="hg1"><h3><span class="objectinfo">Flag Date: </span>March 21, 2015</h3></div>
+<div class="hg1"><h3><span class="objectinfo">Number of Detections: </span>15</h3></div>
+<div class="hg1"><h3><span class="objectinfo">Contextual Classification: </span>sn</h3></div>
+<div class="hg1"><h3><span class="objectinfo">Spectral Type: </span></h3></div>
+</hgroup>
+
+
+
+
+</header>
+
+
+<!-- lightcurve and recurrence plot -->
+<!-- 2012-12-17 KWS Had to specify images sizes below in PIXELS not percentages, otherwise Firefox doesn't render correctly. -->
+<div id="mainplots">
+    <div id="lightcurveandmjdticker">
+        <div id="flot-lightcurve"></div>
+        <div id="mjdticker"><form name="Boxes" onsubmit="0"> Current MJD (vertical line): <input id="mjdtickerform" name="row2d" value="wait ..."></form></div>
+    </div>
+    <div id="recurrenceandlocaitonmap">
+        <div id="flot-recurrenceplot"></div>
+        <div id="locationmap"><center><a href="/ps1threepi/site_media/images/location_maps/1125435460123419200_np.png"><img src="/ps1threepi/site_media/images/location_maps/1125435460123419200_np.png" height="239"  border="0" /></a></center></div>
+    </div>
+</div>
+
+
+
+
+<!-- The following condition is a kludge. Will fix with a sent flag in future. -->
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery-1.7.2.js"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/excanvas.js"></script><![endif]-->
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery.flot.js"></script>
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery.flot.errorbars.js"></script>
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery.flot.axislabels.js"></script>
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery.flot.selection.js"></script>
+<script language="javascript" type="text/javascript">var lcdivname = "#flot-lightcurve";</script>
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/lightcurve.js"></script>
+
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/recurrenceplot.js"></script>
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/mjdcalc.js"></script>
+
+
+
+
+
+
+
+
+<div id="crossmatches">
+<h2>Possible Associations</h2>
+<table class="generictable">
+  <tr>
+  <th>Catalogue</th>
+  <th>ID</th>
+  <th>Separation</th>
+  <th>z</th>
+  <th>Distance (Mpc)</th>
+  <th>(m-M)</th>
+  <th>Distance Scale (Kpc/arcsec)</th>
+  </tr>
+  
+
+  <tr>
+  <td>NASA Extragalactic Database</td>
+  <td>NGC 4782</td>
+  <td>12.66"</td>
+  <td>0.015</td>
+  <td>66.90</td>
+  <td>34.127</td>
+  <td>0.31</td>
+  </tr>
+
+  <tr>
+  <td>NASA Extragalactic Database</td>
+  <td>VV 201</td>
+  <td>32.60"</td>
+  <td>0.015</td>
+  <td>64.98</td>
+  <td>34.064</td>
+  <td>0.31</td>
+  </tr>
+
+</table>
+</div>
+
+
+
+
+<div id="imagesandexternalinformation">
+
+<!-- Stamps, external data & possible associations -->
+
+
+<div id="stamps">
+
+  <table class="images">
+  <tr>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     mjd: 
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57240/1125435460123419200_57240.254_65229106_4300000000_target.jpeg" alt="None" title="None" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (z)
+     
+     mjd: 55739.55236
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57240/1125435460123419200_57240.254_65229106_4300000000_ref.jpeg" alt="164_1_z_RINGS.V3.skycell.1013.081.stk.2873740.unconv.fits" title="164_1_z_RINGS.V3.skycell.1013.081.stk.2873740.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     mjd: 
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57240/1125435460123419200_57240.254_65229106_4300000000_diff.jpeg" alt="None" title="None" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (z)
+     
+     mjd: 57235.25478
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57235/1125435460123419200_57235.254_65140558_4300000000_target.jpeg" alt="162_1_z_o7235g0085o.951562.wrp.1609907.skycell.1013.081.fits" title="162_1_z_o7235g0085o.951562.wrp.1609907.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (z)
+     
+     mjd: 55739.55236
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57235/1125435460123419200_57235.254_65140558_4300000000_ref.jpeg" alt="161_1_z_RINGS.V3.skycell.1013.081.stk.2873740.unconv.fits" title="161_1_z_RINGS.V3.skycell.1013.081.stk.2873740.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (z)
+     
+     mjd: 57235.25478
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57235/1125435460123419200_57235.254_65140558_4300000000_diff.jpeg" alt="160_1_z_RINGS.V3.skycell.1013.081.WS.dif.1185984.fits" title="160_1_z_RINGS.V3.skycell.1013.081.WS.dif.1185984.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57161.32309
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57161/1125435460123419200_57161.323_63203298_4300000000_target.jpeg" alt="24_1_w_o7161g0157o.915789.wrp.1563311.skycell.1013.081.fits" title="24_1_w_o7161g0157o.915789.wrp.1563311.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57161/1125435460123419200_57161.323_63203298_4300000000_ref.jpeg" alt="23_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="23_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57161.32309
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57161/1125435460123419200_57161.323_63203298_4300000000_diff.jpeg" alt="22_1_w_RINGS.V3.skycell.1013.081.WS.dif.1148179.fits" title="22_1_w_RINGS.V3.skycell.1013.081.WS.dif.1148179.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57161.31086
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57161/1125435460123419200_57161.310_63199715_4300000000_target.jpeg" alt="21_1_w_o7161g0139o.915773.wrp.1563289.skycell.1013.081.fits" title="21_1_w_o7161g0139o.915773.wrp.1563289.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57161/1125435460123419200_57161.310_63199715_4300000000_ref.jpeg" alt="20_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="20_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57161.31086
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57161/1125435460123419200_57161.310_63199715_4300000000_diff.jpeg" alt="19_1_w_RINGS.V3.skycell.1013.081.WS.dif.1148109.fits" title="19_1_w_RINGS.V3.skycell.1013.081.WS.dif.1148109.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57161.29861
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57161/1125435460123419200_57161.298_63199518_4300000000_target.jpeg" alt="18_1_w_o7161g0121o.915757.wrp.1563291.skycell.1013.081.fits" title="18_1_w_o7161g0121o.915757.wrp.1563291.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57161/1125435460123419200_57161.298_63199518_4300000000_ref.jpeg" alt="17_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="17_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57161.29861
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57161/1125435460123419200_57161.298_63199518_4300000000_diff.jpeg" alt="16_1_w_RINGS.V3.skycell.1013.081.WS.dif.1148105.fits" title="16_1_w_RINGS.V3.skycell.1013.081.WS.dif.1148105.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57161.28636
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57161/1125435460123419200_57161.286_63183726_4300000000_target.jpeg" alt="15_1_w_o7161g0103o.915737.wrp.1563258.skycell.1013.081.fits" title="15_1_w_o7161g0103o.915737.wrp.1563258.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57161/1125435460123419200_57161.286_63183726_4300000000_ref.jpeg" alt="14_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="14_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57161.28636
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57161/1125435460123419200_57161.286_63183726_4300000000_diff.jpeg" alt="13_1_w_RINGS.V3.skycell.1013.081.WS.dif.1147794.fits" title="13_1_w_RINGS.V3.skycell.1013.081.WS.dif.1147794.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57160.37280
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57160/1125435460123419200_57160.372_62937820_123_target.jpeg" alt="12_1_w_o7160g0263o.915246.wrp.1561470.skycell.1013.081.fits" title="12_1_w_o7160g0263o.915246.wrp.1561470.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57160/1125435460123419200_57160.372_62937820_123_ref.jpeg" alt="11_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="11_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57160.37280
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57160/1125435460123419200_57160.372_62937820_123_diff.jpeg" alt="10_1_w_RINGS.V3.skycell.1013.081.WS.dif.1142896.fits" title="10_1_w_RINGS.V3.skycell.1013.081.WS.dif.1142896.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57160.35967
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57160/1125435460123419200_57160.359_62934311_125_target.jpeg" alt="9_1_w_o7160g0245o.915228.wrp.1561427.skycell.1013.081.fits" title="9_1_w_o7160g0245o.915228.wrp.1561427.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57160/1125435460123419200_57160.359_62934311_125_ref.jpeg" alt="8_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="8_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57160.35967
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57160/1125435460123419200_57160.359_62934311_125_diff.jpeg" alt="7_1_w_RINGS.V3.skycell.1013.081.WS.dif.1142829.fits" title="7_1_w_RINGS.V3.skycell.1013.081.WS.dif.1142829.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57160.34659
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57160/1125435460123419200_57160.346_62933800_154_target.jpeg" alt="6_1_w_o7160g0227o.915210.wrp.1561371.skycell.1013.081.fits" title="6_1_w_o7160g0227o.915210.wrp.1561371.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57160/1125435460123419200_57160.346_62933800_154_ref.jpeg" alt="5_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="5_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57160.34659
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57160/1125435460123419200_57160.346_62933800_154_diff.jpeg" alt="4_1_w_RINGS.V3.skycell.1013.081.WS.dif.1142819.fits" title="4_1_w_RINGS.V3.skycell.1013.081.WS.dif.1142819.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57160.33351
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57160/1125435460123419200_57160.333_62935700_131_target.jpeg" alt="3_1_w_o7160g0209o.915192.wrp.1561334.skycell.1013.081.fits" title="3_1_w_o7160g0209o.915192.wrp.1561334.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57160/1125435460123419200_57160.333_62935700_131_ref.jpeg" alt="2_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="2_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57160.33351
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57160/1125435460123419200_57160.333_62935700_131_diff.jpeg" alt="1_1_w_RINGS.V3.skycell.1013.081.WS.dif.1142855.fits" title="1_1_w_RINGS.V3.skycell.1013.081.WS.dif.1142855.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57159.32033
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57159/1125435460123419200_57159.320_62924322_4300000000_target.jpeg" alt="12_1_w_o7159g0188o.914960.wrp.1558994.skycell.1013.081.fits" title="12_1_w_o7159g0188o.914960.wrp.1558994.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57159/1125435460123419200_57159.320_62924322_4300000000_ref.jpeg" alt="11_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="11_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57159.32033
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57159/1125435460123419200_57159.320_62924322_4300000000_diff.jpeg" alt="10_1_w_RINGS.V3.skycell.1013.081.WS.dif.1142627.fits" title="10_1_w_RINGS.V3.skycell.1013.081.WS.dif.1142627.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (r)
+     
+     mjd: 57137.40354
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57137/1125435460123419200_57137.403_61511788_198_target.jpeg" alt="465_1_r_o7137g0310o.906710.wrp.1541201.skycell.1013.081.fits" title="465_1_r_o7137g0310o.906710.wrp.1541201.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (r)
+     
+     mjd: 55847.92759
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57137/1125435460123419200_57137.403_61511788_198_ref.jpeg" alt="464_1_r_RINGS.V3.skycell.1013.081.stk.2834212.unconv.fits" title="464_1_r_RINGS.V3.skycell.1013.081.stk.2834212.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (r)
+     
+     mjd: 57137.40354
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57137/1125435460123419200_57137.403_61511788_198_diff.jpeg" alt="463_1_r_RINGS.V3.skycell.1013.081.WS.dif.1115102.fits" title="463_1_r_RINGS.V3.skycell.1013.081.WS.dif.1115102.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (r)
+     
+     mjd: 57137.39233
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57137/1125435460123419200_57137.392_61511024_310_target.jpeg" alt="462_1_r_o7137g0293o.906695.wrp.1541179.skycell.1013.081.fits" title="462_1_r_o7137g0293o.906695.wrp.1541179.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (r)
+     
+     mjd: 55847.92759
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57137/1125435460123419200_57137.392_61511024_310_ref.jpeg" alt="461_1_r_RINGS.V3.skycell.1013.081.stk.2834212.unconv.fits" title="461_1_r_RINGS.V3.skycell.1013.081.stk.2834212.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (r)
+     
+     mjd: 57137.39233
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57137/1125435460123419200_57137.392_61511024_310_diff.jpeg" alt="460_1_r_RINGS.V3.skycell.1013.081.WS.dif.1115087.fits" title="460_1_r_RINGS.V3.skycell.1013.081.WS.dif.1115087.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (r)
+     
+     mjd: 57137.38075
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57137/1125435460123419200_57137.380_61510105_4300000000_target.jpeg" alt="468_1_r_o7137g0276o.906677.wrp.1541188.skycell.1013.081.fits" title="468_1_r_o7137g0276o.906677.wrp.1541188.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (r)
+     
+     mjd: 55847.92759
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57137/1125435460123419200_57137.380_61510105_4300000000_ref.jpeg" alt="467_1_r_RINGS.V3.skycell.1013.081.stk.2834212.unconv.fits" title="467_1_r_RINGS.V3.skycell.1013.081.stk.2834212.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (r)
+     
+     mjd: 57137.38075
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57137/1125435460123419200_57137.380_61510105_4300000000_diff.jpeg" alt="466_1_r_RINGS.V3.skycell.1013.081.WS.dif.1115069.fits" title="466_1_r_RINGS.V3.skycell.1013.081.WS.dif.1115069.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (r)
+     
+     mjd: 57137.36950
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57137/1125435460123419200_57137.369_61509287_228_target.jpeg" alt="459_1_r_o7137g0259o.906661.wrp.1541147.skycell.1013.081.fits" title="459_1_r_o7137g0259o.906661.wrp.1541147.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (r)
+     
+     mjd: 55847.92759
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57137/1125435460123419200_57137.369_61509287_228_ref.jpeg" alt="458_1_r_RINGS.V3.skycell.1013.081.stk.2834212.unconv.fits" title="458_1_r_RINGS.V3.skycell.1013.081.stk.2834212.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (r)
+     
+     mjd: 57137.36950
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57137/1125435460123419200_57137.369_61509287_228_diff.jpeg" alt="457_1_r_RINGS.V3.skycell.1013.081.WS.dif.1115053.fits" title="457_1_r_RINGS.V3.skycell.1013.081.WS.dif.1115053.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57102.46871
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.468_44460700_4300000000_target.jpeg" alt="777_1_w_o7102g0195o.888723.wrp.1514061.skycell.1013.081.fits" title="777_1_w_o7102g0195o.888723.wrp.1514061.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.468_44460700_4300000000_ref.jpeg" alt="776_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="776_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57102.46871
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.468_44460700_4300000000_diff.jpeg" alt="775_1_w_RINGS.V3.skycell.1013.081.WS.dif.785112.fits" title="775_1_w_RINGS.V3.skycell.1013.081.WS.dif.785112.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57102.46740
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.467_44460617_4300000000_target.jpeg" alt="774_1_w_o7102g0193o.888721.wrp.1514054.skycell.1013.081.fits" title="774_1_w_o7102g0193o.888721.wrp.1514054.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.467_44460617_4300000000_ref.jpeg" alt="773_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="773_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57102.46740
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.467_44460617_4300000000_diff.jpeg" alt="772_1_w_RINGS.V3.skycell.1013.081.WS.dif.785110.fits" title="772_1_w_RINGS.V3.skycell.1013.081.WS.dif.785110.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57102.45819
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.458_44462382_4300000000_target.jpeg" alt="771_1_w_o7102g0179o.888707.wrp.1514101.skycell.1013.081.fits" title="771_1_w_o7102g0179o.888707.wrp.1514101.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.458_44462382_4300000000_ref.jpeg" alt="770_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="770_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57102.45819
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.458_44462382_4300000000_diff.jpeg" alt="769_1_w_RINGS.V3.skycell.1013.081.WS.dif.785144.fits" title="769_1_w_RINGS.V3.skycell.1013.081.WS.dif.785144.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57102.45688
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.456_44462350_4300000000_target.jpeg" alt="768_1_w_o7102g0177o.888705.wrp.1514113.skycell.1013.081.fits" title="768_1_w_o7102g0177o.888705.wrp.1514113.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.456_44462350_4300000000_ref.jpeg" alt="767_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="767_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57102.45688
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.456_44462350_4300000000_diff.jpeg" alt="766_1_w_RINGS.V3.skycell.1013.081.WS.dif.785143.fits" title="766_1_w_RINGS.V3.skycell.1013.081.WS.dif.785143.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57102.44765
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.447_44463016_4300000000_target.jpeg" alt="765_1_w_o7102g0163o.888691.wrp.1514124.skycell.1013.081.fits" title="765_1_w_o7102g0163o.888691.wrp.1514124.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.447_44463016_4300000000_ref.jpeg" alt="764_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="764_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57102.44765
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.447_44463016_4300000000_diff.jpeg" alt="763_1_w_RINGS.V3.skycell.1013.081.WS.dif.785156.fits" title="763_1_w_RINGS.V3.skycell.1013.081.WS.dif.785156.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57102.44633
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.446_44461835_4300000000_target.jpeg" alt="762_1_w_o7102g0161o.888689.wrp.1514105.skycell.1013.081.fits" title="762_1_w_o7102g0161o.888689.wrp.1514105.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.446_44461835_4300000000_ref.jpeg" alt="761_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="761_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57102.44633
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.446_44461835_4300000000_diff.jpeg" alt="760_1_w_RINGS.V3.skycell.1013.081.WS.dif.785133.fits" title="760_1_w_RINGS.V3.skycell.1013.081.WS.dif.785133.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57102.43710
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.437_44458770_4300000000_target.jpeg" alt="759_1_w_o7102g0147o.888676.wrp.1513973.skycell.1013.081.fits" title="759_1_w_o7102g0147o.888676.wrp.1513973.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.437_44458770_4300000000_ref.jpeg" alt="758_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="758_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57102.43710
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.437_44458770_4300000000_diff.jpeg" alt="757_1_w_RINGS.V3.skycell.1013.081.WS.dif.785075.fits" title="757_1_w_RINGS.V3.skycell.1013.081.WS.dif.785075.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57102.43579
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.435_44458738_4300000000_target.jpeg" alt="756_1_w_o7102g0145o.888674.wrp.1513972.skycell.1013.081.fits" title="756_1_w_o7102g0145o.888674.wrp.1513972.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.435_44458738_4300000000_ref.jpeg" alt="755_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="755_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57102.43579
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57102/1125435460123419200_57102.435_44458738_4300000000_diff.jpeg" alt="754_1_w_RINGS.V3.skycell.1013.081.WS.dif.785074.fits" title="754_1_w_RINGS.V3.skycell.1013.081.WS.dif.785074.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57101.54315
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.543_43795714_80_target.jpeg" alt="168_1_w_o7101g0457o.888331.wrp.1511858.skycell.1013.081.fits" title="168_1_w_o7101g0457o.888331.wrp.1511858.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.543_43795714_80_ref.jpeg" alt="167_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="167_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57101.54315
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.543_43795714_80_diff.jpeg" alt="166_1_w_RINGS.V3.skycell.1013.081.WS.dif.772266.fits" title="166_1_w_RINGS.V3.skycell.1013.081.WS.dif.772266.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57101.54117
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.541_43794805_61_target.jpeg" alt="165_1_w_o7101g0454o.888329.wrp.1511855.skycell.1013.081.fits" title="165_1_w_o7101g0454o.888329.wrp.1511855.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.541_43794805_61_ref.jpeg" alt="164_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="164_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57101.54117
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.541_43794805_61_diff.jpeg" alt="163_1_w_RINGS.V3.skycell.1013.081.WS.dif.772248.fits" title="163_1_w_RINGS.V3.skycell.1013.081.WS.dif.772248.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57101.50646
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.506_43793607_54_target.jpeg" alt="162_1_w_o7101g0439o.888313.wrp.1511836.skycell.1013.081.fits" title="162_1_w_o7101g0439o.888313.wrp.1511836.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.506_43793607_54_ref.jpeg" alt="161_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="161_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57101.50646
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.506_43793607_54_diff.jpeg" alt="160_1_w_RINGS.V3.skycell.1013.081.WS.dif.772225.fits" title="160_1_w_RINGS.V3.skycell.1013.081.WS.dif.772225.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57101.50448
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.504_43793476_29_target.jpeg" alt="159_1_w_o7101g0436o.888310.wrp.1511842.skycell.1013.081.fits" title="159_1_w_o7101g0436o.888310.wrp.1511842.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.504_43793476_29_ref.jpeg" alt="158_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="158_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57101.50448
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.504_43793476_29_diff.jpeg" alt="157_1_w_RINGS.V3.skycell.1013.081.WS.dif.772222.fits" title="157_1_w_RINGS.V3.skycell.1013.081.WS.dif.772222.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57101.49587
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.495_43792271_48_target.jpeg" alt="156_1_w_o7101g0423o.888298.wrp.1511823.skycell.1013.081.fits" title="156_1_w_o7101g0423o.888298.wrp.1511823.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.495_43792271_48_ref.jpeg" alt="155_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="155_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57101.49587
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.495_43792271_48_diff.jpeg" alt="154_1_w_RINGS.V3.skycell.1013.081.WS.dif.772199.fits" title="154_1_w_RINGS.V3.skycell.1013.081.WS.dif.772199.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57101.49389
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.493_43792039_32_target.jpeg" alt="753_1_w_o7101g0420o.888291.wrp.1511819.skycell.1013.081.fits" title="753_1_w_o7101g0420o.888291.wrp.1511819.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.493_43792039_32_ref.jpeg" alt="752_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="752_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57101.49389
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.493_43792039_32_diff.jpeg" alt="751_1_w_RINGS.V3.skycell.1013.081.WS.dif.772194.fits" title="751_1_w_RINGS.V3.skycell.1013.081.WS.dif.772194.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57101.48530
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.485_43791196_45_target.jpeg" alt="750_1_w_o7101g0407o.888282.wrp.1511806.skycell.1013.081.fits" title="750_1_w_o7101g0407o.888282.wrp.1511806.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.485_43791196_45_ref.jpeg" alt="749_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="749_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57101.48530
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.485_43791196_45_diff.jpeg" alt="748_1_w_RINGS.V3.skycell.1013.081.WS.dif.772178.fits" title="748_1_w_RINGS.V3.skycell.1013.081.WS.dif.772178.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57101.48333
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.483_43793221_30_target.jpeg" alt="747_1_w_o7101g0404o.888279.wrp.1511820.skycell.1013.081.fits" title="747_1_w_o7101g0404o.888279.wrp.1511820.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55808.56417
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.483_43793221_30_ref.jpeg" alt="746_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="746_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57101.48333
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.483_43793221_30_diff.jpeg" alt="745_1_w_RINGS.V3.skycell.1013.081.WS.dif.772217.fits" title="745_1_w_RINGS.V3.skycell.1013.081.WS.dif.772217.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+  </tr>
+  </table>
+</div>
+
+
+
+<div id="externalinfo">
+<!-- possible associations -->
+
+
+<div id="associations">
+
+
+</div>
+
+
+
+<div id="wikisky">
+<h2>External Information</h2>
+<script type='text/javascript' src='http://wikisky.org/js/skywindow2'></script>
+<div style='position:relative;left:0px;top:0px;width:300px;height:300px'>
+<div id='mySkyWnd'
+  style='position:absolute;left:0;top:0;width:300px;height:300px;overflow:hidden;border:0px solid gray'
+  onmouseout='hideddrivetip();'></div></div>
+<script type="text/javascript">
+// NEED TO INPUT RA (DECIMAL HOURS) HERE 
+var options = {ra:12.909852102, de:-12.5719799866, initZoom:6, zoom:9,
+  survey:"", imgSource:"DSS2", allowTopPanel:true, showTopPanel:true, showRightPanel:true,
+  allowMove:false, allowZoom:false,
+  showPanZoomControl:true, panZoomControlLeft:6, panZoomControlTop:10,
+  showScale:true, showStatus:false, showPosition:true, showStickers:false, showLabels:false,
+  jpegQuality:0.8,
+  showGrid:false, showOverlayGrid:false,
+  showConstLines:false, showOverlayConstLines:false,
+  showConstBoundaries:false, showOverlayConstBoundaries:false,
+  showConstNames:false, showOverlayConstNames:false,
+  showGalaxies:false, showOverlayGalaxies:false,
+  showStars:false, showOverlayStars:false,
+  buffer:1, moveTime:2000, smoothMoveAccelerationTime:500,
+  posColor:"lightgray",posFontSize:"8pt",posFontWeight:"normal",posFontFamily:"verdana",
+  scaleMaxLen:90, scaleHeight:6, scaleColor:"lightgray", scaleLineWidth:1
+};
+new SkyWindow2(options).attach($('#mySkyWnd')[0]);
+</script>
+</div>
+
+<!-- DR12 Navigate -->
+<div id="sdssdr12">
+<h3>SDSS DR12</h3>
+<a href="http://skyserver.sdss.org/dr12/en/tools/chart/navi.aspx?ra=193.647791346&dec=-12.5719799866&scale=0.5&width=500&height=500&opt=GPS" onmouseover="document.images['s1a'].src='http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=193.647791346&dec=-12.5719799866&scale=0.5&width=500&height=500&opt=GPSI';" onmouseout="document.images['s1a'].src='http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=193.647791346&dec=-12.5719799866&scale=0.5&width=500&height=500&opt=GPS';">
+<img src="http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=193.647791346&dec=-12.5719799866&scale=0.5&width=500&height=500&opt=GPS" name="s1a"  height="300" width="300"  alt="" border="0"></a>
+</div>
+
+
+
+<div id="externallinks">
+<!-- WIKISKY --> <!-- NEED TO INPUT RA (DECIMAL HOURS) HERE x 2 -->
+<div class="links">
+<a href="http://www.wikisky.org/?ra=12.909852102&de=-12.5719799866&zoom=13&show_grid=1&show_constellation_lines=1&show_constellation_boundaries=1&show_const_names=0&show_galaxies=1&show_box=1&box_ra=12.909852102&box_de=-12.5719799866&box_width=50&box_height=50&img_source=DSS2" target="blank">WIKISKY</a>
+</div>
+
+<!-- SDSS DR12 NAVIGATE LINK -->
+<div class="links">
+<a href="http://skyserver.sdss.org/dr12/en/tools/chart/navi.aspx?ra=193.647791346&dec=-12.5719799866&scale=0.1&width=500&height=500&opt=GPS" target="blank">SDSS DR12 Navigate</a>
+</div>
+
+<!--SDSS DR12 NEAREST OBJECT (EXPLORE TOOL - currently broken) -->
+<!--
+<div class="links">
+<a href="http://skyserver.sdss.org/dr12/en/tools/explore/Summary.aspx?ra=193.647791346&dec=-12.5719799866" target="blank">SDSS DR12 Nearest Object</a>
+</div>
+-->
+
+
+
+<!-- NED LINK -->
+<div class="links">
+<a href="http://nedwww.ipac.caltech.edu/cgi-bin/nph-objsearch?in_csys=Equatorial&in_equinox=J2000.0&lon=193.647791d&lat=-12.571980d&radius=0.16667&hconst=73&omegam=0.27&omegav=0.73&corr_z=1&z_constraint=Unconstrained&z_value1=&z_value2=&z_unit=z&search_type=Near+Position+Search&ot_include=ANY&nmp_op=ANY&out_csys=Equatorial&out_equinox=J2000.0&obj_sort=Distance+to+search+center&of=pre_text&zv_breaker=30000.0&list_limit=5&img_stamp=YES" target="_blank">NED: 10 arcsec radius</a>
+</div>
+
+<!-- LEDA -->
+<div class="links">
+<a href="http://leda.univ-lyon1.fr/fG.cgi?n=0&c=o&p=J193.647791346d-12.5719799866d&f=0.16667&ob=ra" target="blank">LEDA: 10 arcsec radius</a>
+</div>
+
+<!-- SIMBAD -->
+<div class="links">
+<a href="http://simbad.u-strasbg.fr/simbad/sim-coo?Coord=193.647791346d-12.5719799866d&Radius=10&Radius.unit=arcsec&CooFrame=FK5&CooEqui=2000&CooEpoch=2000" target="blank">SIMBAD: 10 arcsec radius</a>
+</div>
+
+<!-- Galactic Extinction -->
+<div class="links">
+<a href="http://nedwww.ipac.caltech.edu/cgi-bin/nph-calc?in_csys=Equatorial&in_equinox=J2000.0&obs_epoch=2000.0&lon=193.647791346d&lat=-12.5719799866d&pa=0.0&out_csys=Equatorial&out_equinox=J2000.0" target="blank">Galactic Extinction</a>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+<div id="finders">
+<h2>Finder Chart(s)</h2>
+<ul>
+
+<li><a href="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.541_43794805_61_reffinder.jpeg"><img src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.541_43794805_61_reffinder.jpeg" alt="36_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="36_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  /></a></li>
+
+<li><a href="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.541_43794805_61_targetfinder.jpeg"><img src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.541_43794805_61_targetfinder.jpeg" alt="36_1_w_o7101g0454o.888329.wrp.1511855.skycell.1013.081.fits" title="36_1_w_o7101g0454o.888329.wrp.1511855.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  /></a></li>
+
+<li><a href="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.543_43795714_80_reffinder.jpeg"><img src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.543_43795714_80_reffinder.jpeg" alt="35_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" title="35_1_w_RINGS.V3.skycell.1013.081.stk.1295753.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  /></a></li>
+
+<li><a href="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.543_43795714_80_targetfinder.jpeg"><img src="/ps1threepi/site_media/images/data/ps13pipublic/57101/1125435460123419200_57101.543_43795714_80_targetfinder.jpeg" alt="35_1_w_o7101g0457o.888331.wrp.1511858.skycell.1013.081.fits" title="35_1_w_o7101g0457o.888331.wrp.1511858.skycell.1013.081.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  /></a></li>
+
+</ul>
+</div>
+
+
+
+<!-- 2011-04-04 KWS Added the User Defined Lists -->
+
+
+
+</article>
+</section>
+</div>
+
+</body>
+</html>
